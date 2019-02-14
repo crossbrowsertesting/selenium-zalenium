@@ -19,9 +19,7 @@ class SeleniumCBT(unittest.TestCase):
         try:
             self.driver = webdriver.Remote(
             desired_capabilities = caps,
-            #command_executor = "http://localhost:4444/wd/hub")
-            command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub"%(self.username, self.authkey))
-            
+            command_executor = "http://localhost:4444/wd/hub")    
 
         except Exception as e:
             raise e
