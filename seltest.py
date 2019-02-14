@@ -6,15 +6,15 @@ import os
 
 class SeleniumCBT(unittest.TestCase):
     def setUp(self):
-        self.username = "daphnem@crossbrowsertesting.com"
-        self.authkey  = "u3a5e9a173dfe45a"
+        self.username = "YOUR_USERNAME"
+        self.authkey  = "YOUR_AUTHKEY"
         caps = {}
-        #caps['name'] = 'Zalenium Test'
+        caps['name'] = 'Zalenium Test'
         caps['browserName'] = 'Chrome'
-        #caps['version'] = '72'
-        #caps['platform'] = 'Windows 10'
-        #caps['screenResolution'] = '1366x768'
-        #caps['record_video'] = 'true'
+        caps['version'] = '72'
+        caps['platform'] = 'Windows 10'
+        caps['screenResolution'] = '1366x768'
+        caps['record_video'] = 'true'
 
         try:
             self.driver = webdriver.Remote(
