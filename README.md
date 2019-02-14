@@ -1,7 +1,7 @@
 <h1><strong>Getting Started with Zalenium and CrossBrowserTesting</strong></h1>
 <em>For this document, we provide example test located in our <a href="https://github.com/crossbrowsertesting/selenium-zalenium">Zalenium Github Repository</a>.</em>
 
-Zalenium’s main goal is: to allow anyone to have a disposable and flexible Selenium Grid infrastructure. A <a href="http://www.seleniumhq.org/docs/">Selenium</a> Grid that scales up and down dynamically with this solution based on <a href="https://github.com/elgalu/docker-selenium">docker-selenium</a> to run your tests is started in seconds. When you need a different browser, Zalenium  is easily integrated with the CrossBrowserTesting platform, so you can perform tests on a wide variety of OS/Device/Browser combinations, all from one test.
+Zalenium’s main goal is to allow anyone to have a disposable and flexible Selenium Grid infrastructure. A <a href="http://www.seleniumhq.org/docs/">Selenium</a> Grid that scales up and down dynamically with this solution based on <a href="https://github.com/elgalu/docker-selenium">docker-selenium</a> to run your tests is started in seconds. When you need a different browser, Zalenium  is easily integrated with the CrossBrowserTesting platform, so you can perform tests on a wide variety of OS/Device/Browser combinations, all from one test.
 <h3>Let's walk through getting setup.</h3>
 <strong>1.</strong> Start by installing <a href="https://docs.docker.com/install/">docker</a>, a standalone container image that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
