@@ -17,7 +17,7 @@ docker run --rm -ti --name zalenium -p 4444:4444 \
 -e CBT_USERNAME -e CBT_AUTHKEY -e CBT_HUB_URL \
 -v /tmp/videos:/home/seluser/videos \
 -v /var/run/docker.sock:/var/run/docker.sock \
---privileged dosel/zalenium start
+--privileged dosel/zalenium start --cbtEnabled true
 </code></pre>
 <strong>4.</strong> Create an empty file called <code>/zalenium/test/selenium_test.py</code> with the following content:
 <pre><code>import unittest
@@ -27,8 +27,6 @@ import os
 
 class SeleniumCBT(unittest.TestCase):
 def setUp(self):
-self.username = "YOUR_USERNAME"
-self.authkey = "YOUR_AUTHKEY"
 caps = {}
 caps['name'] = 'Zalenium Test'
 caps['browserName'] = 'Chrome'
