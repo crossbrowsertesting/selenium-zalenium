@@ -12,7 +12,7 @@ docker pull dosel/zalenium
 <strong>3.</strong> Start Zalenium with the command:
 <pre><code>export CBT_USERNAME="YOUR_USERNAME"
 export CBT_AUTHKEY="YOUR_AUTHKEY"
-export CBT_HUB_URL= "http://hub.crossbrowsertesting.com:80/wd/hub"
+export CBT_HUB_URL= "http://YOUR_USERNAME:YOUR_AUTHKEY@hub.crossbrowsertesting.com:80"
 docker run --rm -ti --name zalenium -p 4444:4444 \
 -e CBT_USERNAME -e CBT_AUTHKEY -e CBT_HUB_URL \
 -v /tmp/videos:/home/seluser/videos \
