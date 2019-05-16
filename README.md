@@ -11,11 +11,23 @@ docker pull dosel/zalenium
 </code></pre>
 <strong>3.</strong> Start Zalenium with the command:
 <pre><code>
+export CBT_USERNAME="YOUR_USERNAME"
+export CBT_AUTHKEY="YOUR_AUTHKEY"
+export CBT_HUB_URL= "http://hub.crossbrowsertesting.com:80/wd/hub"
+docker run --rm -ti --name zalenium -p 4444:4444 \
+-e CBT_USERNAME -e CBT_AUTHKEY -e CBT_HUB_URL \
+-v /tmp/videos:/home/seluser/videos \
+-v /var/run/docker.sock:/var/run/docker.sock \
+--privileged dosel/zalenium start --cbtEnabled true
+</code></pre>
+
+<strong>4.</strong> Create an empty file called /zalenium/test/selenium_test.py with the following content:
+
+<pre><code>
 import unittest
 from selenium import webdriver
 import requests, time
 import os
-
 
 class SeleniumCBT(unittest.TestCase):
     def setUp(self):
@@ -28,6 +40,8 @@ class SeleniumCBT(unittest.TestCase):
         caps['platform'] = 'Windows 10'
         caps['screenResolution'] = '1366x768'
         caps['record_video'] = 'true'
+        caps['username']=self.username
+        caps['password']=self.authkey
 
         try:
             self.driver = webdriver.Remote(
