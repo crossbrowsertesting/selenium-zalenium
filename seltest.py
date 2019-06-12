@@ -15,11 +15,12 @@ class SeleniumCBT(unittest.TestCase):
         caps['platform'] = 'Windows 10'
         caps['screenResolution'] = '1366x768'
         caps['record_video'] = 'true'
+        caps['record_network'] = 'false'
 
         try:
             self.driver = webdriver.Remote(
             desired_capabilities = caps,
-            command_executor = "http://localhost:4444/wd/hub")    
+            command_executor = "http://localhost:4444/wd/hub")
 
         except Exception as e:
             raise e
@@ -38,4 +39,3 @@ class SeleniumCBT(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
